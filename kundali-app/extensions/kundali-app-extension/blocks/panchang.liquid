@@ -1,0 +1,116 @@
+{{ shop.metafields.panchang.script.value }}
+
+<style>
+  .panchang_main_wrap .panchang-header h1
+  {
+    color:{{ block.settings.panchang_heading_color }}!important;
+    font-size:{{ block.settings.panchang_heading_font_size }}px!important;
+  }
+  .panchang_main_wrap .panchang-header .date,
+  .panchang_main_wrap .panchang-header i
+  {
+    color:{{ block.settings.panchang_heading_color }}!important;
+  }
+
+  .panchang_main_wrap .panchang-header
+  {
+    background:{{ block.settings.panchang_heading_bg_color }}!important;
+  }
+
+  .panchang_main_wrap .panchang-content .time-highlight
+  {
+    color:{{ block.settings.panchang_content_secondary_color }}!important;
+  }
+  .panchang_main_wrap .panchang-content .panchang-card i
+  {
+    color:{{ block.settings.panchang_content_primary_color }}!important;
+  }
+  .panchang_main_wrap .panchang-content .panchang-card
+  {
+    border-top: 4px solid {{ block.settings.panchang_content_primary_color }}!important;
+  }
+
+  .panchang_main_wrap .panchang-content
+  {
+    background-color:{{ block.settings.panchang_content_bg_color }}!important;
+  }
+
+  .panchang_main_wrap .panchang_wrapper
+  {
+    padding-top:{{ block.settings.panchang_padding_top }}px!important;
+    padding-bottom:{{ block.settings.panchang_padding_bottom }}px!important;
+  }
+
+</style>
+
+{% schema %}
+  {
+    "name": "Local Panchang",
+    "target": "section",
+    "settings": [
+    {
+      "type": "header",
+      "content": "Panchang Settings"
+    },
+    {
+      "type": "color",
+      "id": "panchang_heading_color",
+      "label": "Panchang Heading Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "panchang_heading_bg_color",
+      "label": "Panchang Heading Background Color",
+      "default": "#ED851E"
+    },
+    {
+      "type": "color",
+      "id": "panchang_content_primary_color",
+      "label": "Panchang Content Primary Color",
+      "default": "#e69928"
+    },
+    {
+      "type": "color",
+      "id": "panchang_content_secondary_color",
+      "label": "Panchang Content Secondary Color",
+      "default": "#db779e"
+    },
+    {
+      "type": "color",
+      "id": "panchang_content_bg_color",
+      "label": "Panchang Content Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "panchang_heading_font_size",
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Panchang Heading Font-size",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "panchang_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "panchang_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Bottom Padding",
+      "default": 20
+    }]
+  }
+{% endschema %}

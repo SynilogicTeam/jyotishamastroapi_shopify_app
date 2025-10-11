@@ -1,0 +1,1239 @@
+:root {
+    --primary-color: #8b5cf6;
+    --slight-bold-color: #5f27cd;
+    --bg-primary-light: #f7f7fc;
+    --gradient-girl: linear-gradient(135deg, #ec4899, #f472b6);
+    --gradient-boy: linear-gradient(135deg, #3b82f6, #60a5fa);
+    --gradient-guna: linear-gradient(135deg, #8b5cf6, #a78bfa);
+  
+}
+/* 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  padding: 5px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+} */
+
+/* tabs css */
+.kundali_match{
+    position: relative;
+    min-height: 500px;
+}
+.kundali_match .tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 1.5rem;
+  background: var(--primary-color);
+  justify-content: center;
+  border-radius: 15px;
+}
+.kundali_match .match-tab-button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  margin-top: 5px;
+  font-size: 13px;
+}
+
+.kundali_match .match-tab-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.kundali_match .match-tab-button.active {
+  background: #fff;
+  color: #1e3c72;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.kundali_match .match-tab-content {
+  display: none;
+  opacity: 0;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  
+}
+
+.kundali_match .match-tab-content.active {
+  display: block;
+  animation-name: fadeIn;
+}
+
+
+
+
+/* Basic styling for sub tabs */
+
+.kundali_match .sub-tabs{
+
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.kundali_match .match-sub-tab-button {
+    padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  /* background: rgba(255, 255, 255, 0.1); */
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1rem;
+  backdrop-filter: blur(5px);
+  margin-top: 5px;
+  font-size: 13px;
+ 
+
+}
+
+.kundali_match .match-sub-tab-button.active {
+   background: #fff;
+  color: #1e3c72;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kundali_match .match-sub-tab-content {
+    display: none;
+    margin-top: 10px;
+     opacity: 0;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+}
+
+.kundali_match .match-sub-tab-content.active {
+    display: block;
+      animation-name: fadeIn;
+}
+
+
+
+#kundali_match_price .wrapper{
+display: flex;
+grid-gap: 10px;
+justify-content: center;
+text-align: center;
+}
+#kundali_match_price .pricing-table{
+    width: 50%;
+}
+
+
+
+/* Basic styling for sub tabs */
+
+/* media query tabs */
+@media (max-width: 768px) {
+    .kundali_match .tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+        padding: 1.5rem 0.5rem;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    }
+
+    .kundali_match .tabs::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .kundali_match .match-tab-button {
+        flex: 0 0 auto;
+        padding: 12px 20px;
+        font-size: 14px !important;
+        white-space: nowrap;
+    }
+
+
+    .kundali_match .charts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kundali_match .main-title {
+
+        font-size: 1.5rem !important;
+    
+    }
+
+    .kundali_match .match-sub-tab-button {
+
+        font-size: 10px;
+    }
+}
+
+/* media query tabs */
+
+/* tabs css end*/
+
+/* content data css */
+
+.kundali_match .containerForALL {
+  /* padding: 0px 28px 24px 28px; */
+    /* width: 100%; */
+  max-width: 1200px;
+  margin: 0 auto;    
+  padding: 0 15px;     
+ 
+}
+
+.kundali_match .main-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  color: var(--primary-color);
+  margin-bottom: 20px !important;
+}
+
+/* content data css end */
+
+/* Profile Cards */
+.kundali_match .profile-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.kundali_match .profile-card {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.kundali_match .card-header {
+    padding: 1rem 1.5rem;
+    color: white;
+}
+
+.kundali_match .girl .card-header {
+    background: var(--gradient-girl);
+}
+
+.kundali_match .boy .card-header {
+    background: var(--gradient-boy);
+}
+
+.kundali_match .card-header h2 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.kundali_match .card-content {
+    padding: 1.5rem;
+}
+
+/* Details List */
+.kundali_match .details-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.kundali_match .detail-item {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.kundali_match .detail-item dt {
+    font-size: 1.875rem;
+    color: #6b7280;
+    margin-bottom: 0.25rem;
+}
+
+.kundali_match .detail-item dd {
+    font-weight: 500;
+    color: #111827;
+    font-size: 1.375rem;
+}
+
+.kundali_match .highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Guna Milan Table */
+.kundali_match .guna-milan-section {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.kundali_match .guna {
+    /* background: var(--gradient-guna) !important; */
+    background: var(--gradient-guna) !important;
+}
+
+.kundali_match .guna-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.kundali_match .guna-table th,
+.kundali_match .guna-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size:1.25rem;
+    border: 1px solid #e5e7eb;
+}
+
+.kundali_match .guna-table th {
+    background: var(--bg-primary-light);
+    font-size:1.25rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+.kundali_match .guna-table tbody tr:hover {
+    background: var(--bg-primary-light);
+}
+
+.kundali_match .obtained-points {
+    font-weight: 600;
+    color: var(--primary-color);
+    background: #eef2ff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    display: inline-block;
+}
+
+.kundali_match .total-points {
+    font-weight: 700;
+    color:#8b5cf6;
+    background: #f5f3ff;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+}
+
+/* Verdict Box */
+
+.kundali_match .verdict-box {
+    /* margin-top: 2rem; */
+    /* padding: 1.5rem; */
+
+    /* border-radius: 0.5rem; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kundali_match .verdict-box h3 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.kundali_match .good-match {
+    color: var(--primary-color);
+}
+.kundali_match .circular-progress {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 1.5rem 0;
+}
+
+.kundali_match .progress-ring {
+    transform: rotate(-90deg);
+}
+
+.kundali_match .progress-ring-bg {
+    fill: none;
+    stroke: var(--bg-primary-light);
+    stroke-width: 12;
+}
+
+.kundali_match .progress-ring-circle {
+    fill: none;
+    stroke: var(--primary-color);
+    stroke-width: 12;
+    stroke-linecap: round;
+    stroke-dasharray: 339.292; /* Circumference: 2 * π * r = 2 * π * 54 */
+    stroke-dashoffset: 339.292;
+    transition: stroke-dashoffset 1s ease;
+}
+
+.kundali_match .progress-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+
+/* Planet Details */
+.kundali_match .planet-details {
+    background: white;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+}
+
+.kundali_match .planet-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.kundali_match .planet-table th,
+.kundali_match .planet-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    white-space: nowrap;
+}
+
+.kundali_match .planet-table th {
+    background: #f9fafb;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #6b7280;
+}
+
+.kundali_match .planet-table tbody tr:hover {
+    background: #f9fafb;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .kundali_match .container {
+        padding: 0.5rem;
+    }
+
+    .kundali_match .header h1 {
+        font-size: 1.5rem;
+    }
+
+    .kundali_match .profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kundali_match .details-list {
+        grid-template-columns: 1fr;
+    }
+
+    .kundali_match .guna-table,
+    .kundali_match .planet-table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .kundali_match .card-content {
+        padding: 1rem;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn-inner {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kundali_match .profile-card,
+.kundali_match .guna-milan-section,
+.kundali_match .planet-details {
+    animation: fadeIn-inner 0.5s ease-out forwards;
+}
+
+.kundali_match .section-title-basic {
+  font-size: 1.6rem;
+  color: #444444 ;
+  border-left: 4px solid var(--primary-color);
+  padding-left: 10px;
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+.kundali_match .aggregate-flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  gap: 50px;
+}
+
+.kundali_match .aggregate-inner{
+    padding: 20px;
+    background: white;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kundali_match .verdict-textContent {
+    background-color: white;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    color: #444;
+    border-left: 4px solid var(--primary-color);
+}
+
+
+.kundali_match .dosha-section-matching {
+    margin-top: 35px !important;
+    margin-bottom: 40px;
+}
+
+.kundali_match .dosha-section-matching h2{
+    margin-bottom: 20px;
+    color: var(--primary-color);
+
+}
+
+.kundali_match .dosha-grid-matching {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 20px;
+}
+
+.kundali_match .dosha-card-matching {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.kundali_match .dosha-title-matching {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.kundali_match .dosha-status-matching {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: auto;
+    background-color: #F6F8FB;
+    color: #444;
+}
+
+
+
+.kundali_match .dosha-description-matching {
+    color: #4a5568;
+    margin-bottom: 15px;
+}
+
+.kundali_match .dosha-points-matching {
+    display: flex;
+    justify-content: space-between;
+    /* background-color: #f7fafc; */
+    background-color: var(--bg-primary-light);
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.kundali_match .point-label-matching {
+    font-weight: 500;
+}
+
+
+
+@media (max-width: 768px) {
+    
+    .kundali_match .dosha-grid-matching {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* nakshatra css */
+
+
+.kundali_match .hidden {
+    display: none;
+}
+
+/* Gender Selection */
+.kundali_match .gender-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+}
+
+.kundali_match .gender-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.kundali_match .gender-icon:hover {
+    transform: scale(1.05);
+}
+
+.kundali_match .icon-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #FFD966;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.kundali_match .gender-icon p {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+/* Nakshatra Selection */
+.kundali_match .nakshatra-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.kundali_match .nakshatra-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.kundali_match .nakshatra-icon:hover {
+    transform: scale(1.05);
+}
+
+.kundali_match .nakshatra-icon .icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.kundali_match .nakshatra-svg {
+    width: 40px;
+    height: 40px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.kundali_match .nakshatra-icon p{
+    font-size: 14px !important;
+}
+
+.kundali_match .nakshatra-icon p {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.kundali_match .nakshatra-icon.selected .icon-circle {
+    border: 3px solid #003366;
+}
+
+/* Selected Nakshatras */
+.kundali_match .selected-icons {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.kundali_match .show-now-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: block;
+    margin:40px auto;
+    border: 1px solid var(--primary-color);
+}
+
+.kundali_match .show-now-btn:hover {
+   color: var(--primary-color);
+   background-color: white;
+}
+
+/* Results Screen */
+.kundali_match #nakshatras_result {
+  padding-top: 10px;
+}
+
+/* nakshatra css */
+
+
+
+.kundali_match .nakshatra-svg
+{
+    display: block!important;
+}
+
+/* Kundali Matching Page CSS */
+
+.kundali_match .kundali-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.login_modal_show .kundali_match .kundali-container{
+    filter: blur(2px);
+}
+
+.kundali_match .kundali-form-wrapper {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+}
+
+.kundali_match .kundali-form-wrapper::before,
+.kundali_match .kundali-form-wrapper::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.kundali_match .kundali-form-wrapper::before {
+    top: -50px;
+    right: -50px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.kundali_match .kundali-form-wrapper::after {
+    bottom: -50px;
+    left: -50px;
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+}
+
+.kundali_match .kundali-header {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.kundali_match .kundali-stars {
+    position: absolute;
+    top: -10px;
+    left: 0;
+    right: 0;
+    height: 20px;
+    background-image:
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px),
+        radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px, 5px 5px;
+    opacity: 0.3;
+}
+
+.kundali_match .kundali-header h1 {
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.kundali_match .kundali-subtitle {
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+.kundali_match .kundali-two-columns {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kundali_match .kundali-column {
+    flex: 1;
+    min-width: 280px;
+}
+
+.kundali_match .kundali-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #4a00e0;
+}
+
+.kundali_match .kundali-form-group {
+    margin-bottom: 15px;
+}
+
+.kundali_match .kundali-column label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 400;
+    color: #444;
+    font-size: 16px;
+}
+
+.kundali_match .kundali-column input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.kundali_match .kundali-column input:focus {
+    outline: none;
+    border-color: #8e2de2;
+
+}
+
+.kundali_match .kundali-column input::placeholder {
+    color: #aaa;
+}
+
+.kundali_match .kundali-submit-btn {
+    width: 100%;
+    background: linear-gradient(to right, #8e2de2, #4a00e0);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.kundali_match .kundali-submit-btn:hover {
+
+    box-shadow: 0 7px 14px rgba(74, 0, 224, 0.3);
+}
+
+
+
+/* Modal */
+
+.kundali_match .modal-kundli {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.kundali_match .modal-kundli.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kundali_match .modal-content-kundli {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 750px;
+    /* height: 400px; */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+.kundali_match .price_modal_match .modal-content-kundli{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.kundali_match .modal-content-kundli::-webkit-scrollbar {
+    display: none;
+}
+
+.kundali_match .modal-kundli.show .modal-content-kundli {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.kundali_match .close-button-kundli {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kundali_match .kundali-modal {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
+
+.kundali_match .kundali-card {
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+.kundali_match .price_modal_match .kundali-card{
+    border-top: 4px solid #e69928!important;
+   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.kundali_match .kundali-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: normal;
+}
+
+.kundali_match .kundali-price {
+    background: var(--accent-color-kundali);
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: 500;
+}
+
+.kundali_match .kundali-description {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+
+.kundali_match .kundali-btn-popup {
+    padding: 10px 20px;
+    border: 1px solid #ed851e;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #ed851e;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.kundali_match .kundali-btn-popup:hover {
+    background-color: #ed851e;
+    color: white;
+}
+
+/* Nakshatra Pop Up */
+
+
+/* Modal */
+
+.kundali_match .modal-nakshatra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.kundali_match .modal-nakshatra.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kundali_match .modal-content-nakshatra {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 750px;
+    /* height: 400px; */
+    max-height: 90vh;
+    overflow-y: auto;
+
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.kundali_match .modal-content-nakshatra::-webkit-scrollbar {
+    display: none;
+}
+
+.kundali_match .modal-nakshatra.show .modal-content-nakshatra {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.kundali_match .close-button-nakshatra {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kundali_match .nakshatra_modal-main{
+    position: relative !important;
+}
+.nakshatra_modal-main .nakshatra-wrap{
+    height: 370px;
+    overflow: auto;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 15px;
+}
+
+
+
+/* Login Alert Modal Popup*/
+.login_modal_show{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.login_modal_show::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+   background-color:rgb(0 0 0 / 23%);
+}
+
+/* .login_modal_show .kundali-container .kundali-form-wrapper::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+   background-color:rgb(0 0 0 / 23%);
+} */
+.kundali_match .login_modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.kundali_match .login_modal.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kundali_match .login-modal-content-kundli-match {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 750px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.kundali_match .login-modal-content-kundli-match::-webkit-scrollbar {
+    display: none;
+}
+
+.kundali_match .login_modal.show .login-modal-content-kundli-match {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.kundali_match .login-modal-close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kundali_match .login-modal {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
+
+.kundali_match .login-modal-content-kundli-match .login-modal {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+}
+.kundali_match .kundali-description-div{
+    margin-bottom: 0px;
+    text-align: center;
+}
+.kundali_match .login-modal-content-kundli-match .kundali-btn-popup {
+    padding: 7px 20px;
+    border: 1px solid var(--primary-color-kundali);
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: white;
+    color: var(--primary-color-kundali);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: max-content;
+    margin: auto;
+}
+
+/* Purchase Button Spinner */
+
+.match_spin_btn
+{
+    animation: rotate-animation 3s infinite linear;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/*  */
+
+#kundali_matching-result .right-exit-btn
+{
+    top: auto!important;
+}
+
+#kundali_matching-result .kundali-submit-btn
+{
+    font-size: 15px;
+    font-weight: 600;
+}
+.login_modal_show .kundali_match #kundali_matching-result{
+    filter: blur(2px);
+}

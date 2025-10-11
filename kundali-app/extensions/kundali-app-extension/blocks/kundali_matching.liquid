@@ -1,0 +1,148 @@
+{{ shop.metafields.kundali_matching.script.value }}
+
+<style>
+  .kundali-container .kundali-header h1
+  {
+    color:{{ block.settings.kundali_widget_title_color }}!important;
+    font-size:{{ block.settings.kundali_widget_title_font_size }}px!important;
+  }
+  .kundali-container .kundali-subtitle
+  {
+    color:{{ block.settings.kundali_widget_subtitle_color }}!important;
+    font-size:{{ block.settings.kundali_widget_subtitle_font_size }}px!important;
+  }
+  .kundali-container .kundali-form-wrapper{
+    background:{{ block.settings.kundali_widget_bg_color }}!important;
+  }
+  .kundali_match .kundali-container .kundali-submit-btn
+  {
+    color:{{ block.settings.widget_btn_color }}!important;
+    background:{{ block.settings.widget_button_bg_color }}!important;
+    font-size:{{ block.settings.widget_button_font_size }}px!important;
+  }
+  .kundali-container
+  {
+    color:{{ block.settings.text_color }}!important;
+    padding-top:{{ block.settings.kundali_widget_padding_top }}px!important;
+    padding-bottom:{{ block.settings.kundali_widget_padding_bottom }}px!important;
+  }
+  
+  .kundali-container .kundali-section-title{
+    color:{{ block.settings.widget_section_heading_color }}!important;
+    font-size:{{ block.settings.widget_section_heading_font_size }}px!important;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Local Kundali Matching",
+    "target": "section",
+    "settings": [
+    {
+      "type": "header",
+      "content": "Kundali Matching Settings"
+    },
+    {
+      "type": "color",
+      "id": "kundali_widget_title_color",
+      "label": "Widget Title Color",
+      "default": "#ed851e"
+    },
+    {
+      "type": "color",
+      "id": "widget_section_heading_color",
+      "label": "Section Heading Color",
+      "default": "#ed851e"
+    },
+    {
+      "type": "color",
+      "id": "kundali_widget_subtitle_color",
+      "label": "Widget SubTitle Color",
+      "default": "#767171"
+    },
+    {
+      "type": "color",
+      "id": "kundali_widget_bg_color",
+      "label": "Widget Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "widget_btn_color",
+      "label": "Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "widget_button_bg_color",
+      "label": "Button Background Color",
+      "default": "#ed851e"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Content Text Color",
+      "default": "#767676"
+    },
+    {
+      "type": "range",
+      "id": "widget_section_heading_font_size",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Section Heading Font-size",
+      "default": 17
+    },
+    {
+      "type": "range",
+      "id": "kundali_widget_title_font_size",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Widget Title Font-size",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "kundali_widget_subtitle_font_size",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Widget Sub Title Font-size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "widget_button_font_size",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Button Font-size",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "kundali_widget_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Top Padding",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "kundali_widget_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Bottom Padding",
+      "default": 20
+    }]
+  }
+{% endschema %}

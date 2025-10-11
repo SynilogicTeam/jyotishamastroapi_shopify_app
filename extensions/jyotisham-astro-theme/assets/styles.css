@@ -1,0 +1,161 @@
+/* Jyotisham Astro Theme Extension - Global Styles */
+
+/* Reset and Base Styles */
+.jyotisham-astro-container * {
+  box-sizing: border-box;
+}
+
+.jyotisham-astro-container {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.jyotisham-astro-container input,
+.jyotisham-astro-container select,
+.jyotisham-astro-container textarea {
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.jyotisham-astro-container input:focus,
+.jyotisham-astro-container select:focus,
+.jyotisham-astro-container textarea:focus {
+  outline: none;
+  transform: translateY(-1px);
+}
+
+/* Button Styles */
+.jyotisham-astro-container button {
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  outline: none;
+}
+
+.jyotisham-astro-container button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.jyotisham-astro-container button:active {
+  transform: translateY(0);
+}
+
+.jyotisham-astro-container button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+/* Card Styles */
+.jyotisham-astro-container .card {
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.jyotisham-astro-container .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Loading Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+/* Utility Classes */
+.jyotisham-astro-container .fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.jyotisham-astro-container .slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+.jyotisham-astro-container .pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .jyotisham-astro-container .form-row {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .jyotisham-astro-container .card-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .jyotisham-astro-container .card-icon {
+    margin-bottom: 8px !important;
+  }
+  
+  .jyotisham-astro-container {
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .jyotisham-astro-container h2 {
+    font-size: 24px !important;
+  }
+  
+  .jyotisham-astro-container h3 {
+    font-size: 18px !important;
+  }
+  
+  .jyotisham-astro-container button {
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Accessibility */
+.jyotisham-astro-container *:focus {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.jyotisham-astro-container .sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Print Styles */
+@media print {
+  .jyotisham-astro-container {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+  }
+  
+  .jyotisham-astro-container button {
+    display: none !important;
+  }
+}

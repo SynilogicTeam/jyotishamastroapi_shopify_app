@@ -1,0 +1,151 @@
+{{ shop.metafields.kundali.script.value }}
+
+<style>
+  .kundali_wrapper .kundali-head h1
+  {
+    color:{{ block.settings.widget_heading_color }}!important;
+    font-size:{{ block.settings.section_heading_font_size }}px!important;
+  }
+  .kundali_wrapper .kundali-head{
+    background:{{ block.settings.widget_heading_bg_color }}!important;
+  }
+  .kundali_wrapper .kundali-form-container .kundali-input-wrapper input:hover,
+  .kundali_wrapper .kundali-form-container .kundali-input-wrapper select:hover
+  {
+    border-color:{{ block.settings.content_text_color }}!important;
+  }
+  .kundali_wrapper .kundali-form-container .kundali-input-icon,
+  .kundali_wrapper .kundali-form-container .kundali-form-group label{
+    color:{{ block.settings.content_text_color }}!important;
+  }
+  .kundali_wrapper .kundali-form-container{
+    background-color:{{ block.settings.section_bg_color }}!important;
+  }
+  .kundali_wrapper button.kundali-btn-primary
+  {
+    color:{{ block.settings.view_btn_color }}!important;
+    background:{{ block.settings.view_button_bg_color }}!important;
+    font-size:{{ block.settings.view_button_font_size }}px!important;
+  }
+  .kundali_wrapper button.kundali-btn-success
+  {
+    color:{{ block.settings.pay_btn_color }}!important;
+    background:{{ block.settings.pay_button_bg_color }}!important;
+    font-size:{{ block.settings.pay_button_font_size }}px!important;
+  }
+  .kundali_wrapper
+  {
+    padding-top:{{ block.settings.kundali_padding_top }}px!important;
+    padding-bottom:{{ block.settings.kundali_padding_bottom }}px!important;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "Local Kundali",
+    "target": "section",
+    "settings": [
+    {
+      "type": "header",
+      "content": "Kundali Settings"
+    },
+    {
+      "type": "color",
+      "id": "widget_heading_color",
+      "label": "Widget Title Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "widget_heading_bg_color",
+      "label": "Widget Heading Background Color",
+      "default": "#ed851e"
+    },
+    {
+      "type": "color",
+      "id": "section_bg_color",
+      "label": "Section Background Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "content_text_color",
+      "label": "Content Color",
+      "default": "#333030"
+    },
+    {
+      "type": "color",
+      "id": "view_btn_color",
+      "label": "View Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "view_button_bg_color",
+      "label": "View Button Background Color",
+      "default": "#ED851E"
+    },
+    {
+      "type": "color",
+      "id": "pay_btn_color",
+      "label": "Pay Button Text Color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "pay_button_bg_color",
+      "label": "Pay Button Background Color",
+      "default": "#ED851E"
+    },
+    {
+      "type": "range",
+      "id": "section_heading_font_size",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Heading Font-size",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "view_button_font_size",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "View Button Font-size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "pay_button_font_size",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Pay Button Font-size",
+      "default": 11
+    },
+    {
+      "type": "range",
+      "id": "kundali_padding_top",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Top Padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "kundali_padding_bottom",
+      "min": 0,
+      "max": 150,
+      "step": 10,
+      "unit": "px",
+      "label": "Section Bottom Padding",
+      "default": 20
+    }]
+  }
+{% endschema %}

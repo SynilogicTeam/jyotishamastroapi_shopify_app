@@ -1,0 +1,40 @@
+{% comment %}
+  Stars snippet for displaying star ratings
+  Usage: {% render 'stars', rating: 4, max_rating: 5, color: '#ffd700' %}
+{% endcomment %}
+
+{% assign rating = rating | default: 0 %}
+{% assign max_rating = max_rating | default: 5 %}
+{% assign color = color | default: '#ffd700' %}
+{% assign size = size | default: '16px' %}
+
+<div class="stars-container" style="display: inline-flex; align-items: center;">
+  {% for i in (1..max_rating) %}
+    {% if i <= rating %}
+      <span class="star filled" style="color: {{ color }}; font-size: {{ size }}; margin-right: 2px;">★</span>
+    {% else %}
+      <span class="star empty" style="color: #ddd; font-size: {{ size }}; margin-right: 2px;">☆</span>
+    {% endif %}
+  {% endfor %}
+  
+  {% if show_rating %}
+    <span class="rating-text" style="margin-left: 8px; font-size: {{ size }}; color: {{ color }};">
+      {{ rating }}/{{ max_rating }}
+    </span>
+  {% endif %}
+</div>
+
+<style>
+  .stars-container .star {
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  
+  .stars-container .star:hover {
+    transform: scale(1.1);
+  }
+  
+  .stars-container .star.filled {
+    text-shadow: 0 0 4px rgba(255, 215, 0, 0.5);
+  }
+</style>

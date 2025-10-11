@@ -1,0 +1,20 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "7ccaa9ba73de8a80308492e236fcdf98"
+name = "Local Kundali App"
+handle = "kundali-app"
+application_url = "https://localhost/my_kundali/public/shop/install"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "k-lokesh.myshopify.com"
+
+[webhooks]
+api_version = "2025-04"
+
+[auth]
+redirect_urls = [ "https://localhost/my_kundali/public/shop/auth" ]
+
+[pos]
+embedded = false

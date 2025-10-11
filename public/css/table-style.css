@@ -1,0 +1,181 @@
+/*=========Table css start---*/
+
+div.dt-container .dt-length label{
+  display: none;
+}
+
+table.dataTable>thead>tr>th, table.dataTable>thead>tr>td {
+  border-bottom: 0px solid rgba(0, 0, 0, 0.3);
+  border-top: var(--p-border-width-025) solid #e3e3e3;
+}
+
+table.dataTable thead>tr>th.dt-orderable-asc:hover, table.dataTable thead>tr>th.dt-orderable-desc:hover, table.dataTable thead>tr>td.dt-orderable-asc:hover, table.dataTable thead>tr>td.dt-orderable-desc:hover {
+  outline: none;
+  outline-offset: 0px;
+}
+
+div.dt-container.dt-empty-footer .dt-scroll-body {
+  border-bottom: 1px solid rgb(209 213 219/1);
+}
+
+.Polaris-IndexTable__TableRow:first-child {
+  border-top: var(--p-border-width-025) solid #e3e3e3;
+}
+
+div.dt-container .dt-input {
+  border: 0px solid #aaa;
+  border-radius: 8px;
+  box-shadow: inset 0 -0.0625rem 0 #b5b5b5, inset -0.0625rem 0 0 #e3e3e3, inset 0.0625rem 0 0 #e3e3e3, inset 0 0.0625rem 0 #e3e3e3;
+}
+
+div.dt-container select.dt-input {
+  padding: 6px 4px;
+}
+
+div.dt-container .dt-search input {
+  border: 1px solid rgb(138 138 138);
+  border-radius: 8px;
+  padding: 6px 8px;
+  background-color: transparent;
+  box-shadow: none;
+}
+
+
+div.dt-container .dt-paging .dt-paging-button{
+  color: rgb(74 74 74)!important;
+  border: 0!important;
+  padding: 0.25rem 0.25rem;
+  min-height: var(--p-height-700);
+  min-width: var(--p-width-700);
+  line-height: 0;
+  
+}
+
+div.dt-container .dt-paging .dt-paging-button.previous,
+div.dt-container .dt-paging .dt-paging-button.next {
+  background: var(--p-color-bg-fill-tertiary);
+  border-radius: var(--p-border-radius-200);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+div.dt-container .dt-paging .dt-paging-button.previous {
+  border-top-right-radius: var(--p-border-radius-0);
+  border-bottom-right-radius: var(--p-border-radius-0);
+}
+
+div.dt-container .dt-paging .dt-paging-button.next {
+  border-top-left-radius: var(--p-border-radius-0);
+  border-bottom-left-radius: var(--p-border-radius-0);
+}
+
+div.dt-container .dt-paging .dt-paging-button:hover {
+  color: rgb(74 74 74)!important;
+  border: 0;
+  background: var(--p-color-bg-fill-tertiary-hover)!important;
+}
+
+div.dt-container .dt-paging .dt-paging-button.current, div.dt-container .dt-paging .dt-paging-button.current:hover{
+  background: var(--p-color-bg-fill-tertiary);
+}
+
+/*=========Table css End---*/
+
+
+/*=========Modal popup css Start---*/
+@keyframes fadeIn {0% {opacity: 1;}100% {opacity: 1;}}
+@keyframes fadeOut {0% {opacity: 1;}100% {opacity: 0;}}
+@keyframes fadeInDown {0% {opacity: 0;transform: translateY(100px);}100% {opacity: 1;transform: translateY(0); }}
+@keyframes fadeOutUp {0% { opacity: 1;transform: translateY(0);}100% {opacity: 0;transform: translateY(100px);}}
+
+.fade {
+  transition: opacity .15s linear
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .fade {
+    transition: none
+  }
+}
+
+.course-modal-popup.fade .Polaris-Modal-Dialog__Container {
+  transition: transform .3s ease-out;
+  transform: translate(0, -50px)
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .course-modal-popup.fade .Polaris-Modal-Dialog__Container {
+    transition: none
+  }
+}
+
+.fade:not(.show) {
+  opacity: 0
+}
+
+.course-modal-popup.show {
+/*  animation: fadeIn 0.2s ease-in-out forwards;*/
+}
+
+.course-modal-popup.modal-hide {
+/*  animation: fadeOut 0.3s ease-in-out 0.1s forwards;*/
+}
+
+.course-modal-popup.show .Polaris-Modal-Dialog__Container {
+  animation: fadeInDown 0.3s ease-in-out forwards;
+  transform: none
+}
+
+.course-modal-popup.modal-hide .Polaris-Modal-Dialog__Container {
+  animation: fadeOutUp 0.3s ease-in-out forwards;
+}
+
+.course-modal-popup.certificate-modal{
+  position: relative;
+  z-index: 99999;
+}
+
+.course-modal-popup.certificate-modal .certificate-body{
+  background: #f3f3f3;
+  width:100%;
+  height:auto;
+}
+
+.course-modal-popup.certificate-modal .certificate-body .certificate-box_sw{
+  width: 100%;
+  overflow: scroll;
+}
+
+@media (min-width: 768px) {
+  .course-modal-popup.certificate-modal .Polaris-Modal-Dialog__Modal{
+    max-width: calc(100% - 60px);
+  }
+}
+
+/*=========Modal popup css End---*/
+
+/*---------------Responsive----------------------*/
+@media (max-width: 768px) {
+  div.dt-container div.dt-layout-row:not(.dt-layout-table) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+}
+
+#payments_list_wrapper .dt-layout-row{
+    padding: 0 15px;
+}
+#payments_list_wrapper .dt-layout-table{
+    padding: 0px 0px !important;
+}
+.dt-paging nav .first,
+.dt-paging nav .last{
+    display: none !important;
+}
+table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td,table.dataTable>tbody>tr>th, table.dataTable>tbody>tr>td{
+    text-align: center !important;
+}
+div.dt-container .dt-paging .dt-paging-button{
+    font-size: 15px;
+}

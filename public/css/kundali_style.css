@@ -1,0 +1,1590 @@
+:root {
+    --primary-color-kundali: #ff6b6b;
+    --accent-color-kundali: linear-gradient(to right, #e74c3c, #f39c12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.kundali_wrapper .hidden {
+    display: none;
+}
+
+.kundali_wrapper .kundali-cont {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+}
+.login_modal_kundali_show .kundali_wrapper .kundali-cont{
+  filter: blur(2px);
+}
+.kundali_wrapper .kundali-head {
+    background: linear-gradient(135deg, #ff6b6b, #ffa500);
+    padding: 20px 30px;
+    text-align: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.kundali_wrapper .kundali-head::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>')
+        repeat;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translateX(-50px) translateY(-50px);
+    }
+    100% {
+        transform: translateX(50px) translateY(50px);
+    }
+}
+
+.kundali_wrapper .kundali-head h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+.kundali_wrapper .kundali-head p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    position: relative;
+    z-index: 1;
+}
+
+.kundali_wrapper .kundali-form-container {
+    padding: 40px 30px;
+}
+
+.kundali_wrapper .kundali-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.kundali_wrapper .kundali-form-group {
+    position: relative;
+}
+
+.kundali_wrapper .kundali-form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 400;
+    color: #333;
+    font-size: 16px;
+}
+
+.kundali_wrapper .kundali-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.kundali_wrapper .kundali-input-icon {
+    position: absolute;
+    left: 15px;
+    color: var(--primary-color-kundali);
+    font-size: 1.1rem;
+    z-index: 1;
+}
+
+.kundali_wrapper .kundali-form-control {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+    color: #333;
+}
+
+.kundali_wrapper .kundali-form-control:focus {
+    outline: none;
+    border-color: var(--primary-color-kundali);
+}
+
+.kundali_wrapper .kundali-form-control:hover {
+    border-color: var(--primary-color-kundali);
+}
+
+.kundali_wrapper select.kundali-form-control {
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%23667eea" stroke-width="2"><polyline points="6,9 12,15 18,9"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 16px;
+}
+
+.kundali_wrapper .kundali-button-group {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.kundali_wrapper .kundali-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 180px;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.kundali_wrapper .kundali-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.kundali_wrapper .kundali-btn:hover::before {
+    left: 100%;
+}
+
+.kundali_wrapper .kundali-btn-primary {
+    background: var(--accent-color-kundali);
+    color: white;
+    box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.kundali_wrapper .kundali-btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(102, 126, 234, 0.4);
+}
+
+.kundali_wrapper .kundali-btn-success {
+    background: linear-gradient(135deg, #56ab2f, #a8e6cf);
+    color: white;
+    box-shadow: 0 8px 20px rgba(86, 171, 47, 0.3);
+}
+
+.kundali_wrapper .kundali-btn-success:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(86, 171, 47, 0.4);
+}
+
+#kundalihide .kundali-btn.response_content
+{
+    background: #8b5cf6;
+    color: #fff;
+    font-size: 13px;
+}
+
+#kundalihide .kundali-btn.response_content:hover
+{
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(86, 171, 47, 0.4);
+}
+
+.kundali_wrapper .kundali-features {
+    background: #f8f9fa;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.kundali_wrapper .kundali-features h3 {
+    color: #333;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.kundali_wrapper .kundali-feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.kundali_wrapper .kundali-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.kundali_wrapper .kundali-feature-item i {
+    color: #667eea;
+}
+
+@media (max-width: 768px) {
+    .kundali_wrapper .kundali-head h1 {
+        font-size: 2rem;
+    }
+
+    .kundali_wrapper .kundali-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kundali_wrapper .kundali-button-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kundali_wrapper .kundali-btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .kundali_wrapper .kundali-feature-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+.kundali_wrapper .kundali-zodiac-bg {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 3rem;
+    opacity: 0.2;
+    color: white;
+}
+
+/* Modal */
+
+.kundali_wrapper .modal-kundli {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+.kundali_wrapper .pricing-kun-modal{
+    position: absolute;
+}
+.kundali_wrapper .modal-kundli.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kundali_wrapper .modal-content-kundli {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 750px;
+    /* height: 400px; */
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 10px 10px 40px rgb(0 0 0 / 26%);
+}
+.kundali_wrapper .pricing-kun-modal .modal-content-kundli{
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.kundali_wrapper .modal-content-kundli::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.kundali_wrapper .modal-kundli.show .modal-content-kundli {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.kundali_wrapper .close-button-kundli {
+    position: absolute;
+    top: -18px;
+    right: 4px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kundali_wrapper .kundali-modal {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    justify-content: center;
+}
+
+.kundali_wrapper .kundali-card {
+    width: 400px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    background-color: #fff;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    padding-bottom: 30px;
+}
+.kundali_wrapper .pricing-kun-modal .kundali-card{
+    border-top: 4px solid #e69928!important;
+   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+
+.kundali_wrapper .kundali-card h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: normal;
+}
+
+.kundali_wrapper .kundali-price {
+    background: var(--accent-color-kundali);
+    color: white;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 10px;
+    font-weight: 500;
+}
+
+.kundali_wrapper .kundali-description {
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.kundali_wrapper .kundali-btn-popup {
+    padding: 10px 20px;
+    border: 1px solid #ed851e;
+    border-radius: 25px;
+    background-color: #fff;
+    color: #ed851e;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.kundali_wrapper .kundali-btn-popup:hover {
+    background-color: #ed851e;
+    color: white;
+}
+/* Stack kundali cards vertically on small screens */
+@media (max-width: 768px) {
+    .kundali_wrapper .kundali-modal {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kundali_wrapper .kundali-card {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+/* --------------------------- Kundali Result CSS --------------------------- */
+
+:root {
+    --primary-color: #8b5cf6;
+    --slight-bold-color: #5f27cd;
+    --bg-primary-light: #f7f7fc;
+    /* rgba(106, 48, 147, 0.1) */
+}
+
+/* tabs css */
+
+.kundali_wrapper .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 1.5rem;
+    background: var(--primary-color);
+    /* justify-content: center; */
+    border-radius: 15px;
+}
+
+.kundali_wrapper .chartSingle {
+    width: 100%;
+    display: contents;
+}
+.kundali_wrapper .tab-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.kundali_wrapper .tab-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.kundali_wrapper .tab-button.active {
+    background: #fff;
+    color: #1e3c72;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.kundali_wrapper .tab-content {
+    display: none;
+    opacity: 0;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.kundali_wrapper .tab-content.active {
+    display: block;
+    animation-name: fadeIn;
+}
+
+/* Basic styling for sub tabs */
+
+.kundali_wrapper .sub-tabs {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.kundali_wrapper .kundali-sub-tab-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    /* background: rgba(255, 255, 255, 0.1); */
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-size: 1rem;
+    backdrop-filter: blur(5px);
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.kundali_wrapper .kundali-sub-tab-button.active {
+    background: #fff;
+    color: #1e3c72;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.kundali_wrapper .kundali-sub-tab-content {
+    display: none;
+    margin-top: 10px;
+    opacity: 0;
+    animation-duration: 0.4s;
+    animation-fill-mode: forwards;
+}
+
+.kundali_wrapper .kundali-sub-tab-content.active {
+    display: block;
+    animation-name: fadeIn;
+}
+
+/* Basic styling for sub tabs */
+
+/* media query tabs */
+@media (max-width: 768px) {
+    .kundali_wrapper .tabs {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE/Edge */
+        padding: 1.5rem 0.5rem;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch; /* Smooth scroll on iOS */
+    }
+
+    .kundali_wrapper .tabs::-webkit-scrollbar {
+        display: none; /* Chrome/Safari */
+    }
+
+    .kundali_wrapper .tab-button {
+        flex: 0 0 auto;
+        padding: 12px 20px;
+        font-size: 14px !important;
+        white-space: nowrap;
+    }
+
+    .kundali_wrapper .charts-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kundali_wrapper .main-title {
+        font-size: 1.5rem !important;
+    }
+
+    .kundali_wrapper .kundali-sub-tab-button {
+        font-size: 10px;
+    }
+}
+
+/* media query tabs */
+
+/* tabs css end*/
+
+/* content data css */
+
+.kundali_wrapper .containerForALL {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px 0;
+}
+
+.kundali_wrapper .main-title {
+    margin-bottom: 5px;
+    text-align: left;
+    font-size: 2rem !important;
+    letter-spacing: 1px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 0;
+}
+.margin_tabs .padding-right{
+    position: relative;
+    padding-right: 70px;
+}
+
+.login_modal_kundali_show .kundali_wrapper .margin_tabs
+{
+    filter: blur(2px);
+}
+
+.padding-right .right-exit-btn{
+    position: absolute;
+    right: 15px;
+    top: 1.5rem;
+}
+.padding-right .right-exit-btn .exit-btn{
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding:12px 15px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+    text-decoration: none;
+    position: relative;
+}
+
+/* basic */
+
+.kundali_wrapper .subtitle {
+    text-align: left;
+    color: #7b7fda;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.kundali_wrapper .section-basic {
+    margin-bottom: 30px;
+}
+.kundali_wrapper .section-title-basic {
+    font-size: 1.6rem;
+    color: #444444;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+    margin-bottom: 14px;
+    font-weight: bold;
+}
+.kundali_wrapper .info-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-bottom: 10px;
+}
+.kundali_wrapper .info-item {
+    flex: 1 1 40%;
+    background: var(--bg-primary-light);
+    border-radius: 10px;
+    padding: 10px 16px;
+    margin-bottom: 6px;
+    box-shadow: 0 2px 8px rgba(95, 39, 205, 0.03);
+    font-size: 14px;
+}
+.kundali_wrapper .info-label {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-right: 6px;
+}
+.kundali_wrapper .gemstones {
+    display: flex;
+    gap: 26px;
+    justify-content: center;
+    margin-top: 10px;
+}
+.kundali_wrapper .gemstone-card {
+    background: linear-gradient(120deg, #f8fafc 60%, #f9e7fe 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(95, 39, 205, 0.07);
+    padding: 16px 18px;
+    text-align: center;
+    flex: 1 1;
+}
+.kundali_wrapper .gemstone-title {
+    color: #e17055;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+}
+.kundali_wrapper .gemstone-name {
+    font-size: 1.1rem;
+    color: #3d5a80;
+    font-weight: 600;
+}
+.kundali_wrapper .attributes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8px;
+    border-radius: 8px;
+    overflow: hidden;
+    font-size: 14px;
+}
+.kundali_wrapper .attributes-table th,
+.kundali_wrapper .attributes-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(106, 48, 147, 0.1);
+}
+.kundali_wrapper .attributes-table th {
+    background: var(--bg-primary-light);
+    color: var(--primary-color);
+}
+.kundali_wrapper .attributes-table td {
+    color: #22223b;
+}
+.kundali_wrapper .name-letters {
+    font-size: 1.1rem;
+    color: #009688;
+    font-weight: 500;
+    margin-left: 6px;
+}
+@media (max-width: 600px) {
+    .kundali_wrapper .containerForALL {
+        padding: 16px 6px;
+    }
+    .kundali_wrapper .info-list {
+        flex-direction: column;
+    }
+    .kundali_wrapper .gemstones {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+/* basic */
+
+/* charts */
+.kundali_wrapper .charts-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.kundali_wrapper .chartSingle h2 {
+    text-align: center;
+    margin: 10px;
+}
+
+/* charts */
+
+/* plantary */
+
+.kundali_wrapper .container-planetary h2 {
+    color: var(--primary-color);
+    margin: 20px 0 15px;
+    font-size: 1.3rem;
+    position: relative;
+    display: inline-block;
+}
+
+.kundali_wrapper .container-planetary h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        var(--primary-color),
+        var(--primary-color)
+    );
+    border-radius: 3px;
+}
+
+.kundali_wrapper .card-planetary {
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+.kundali_wrapper .planetary-table {
+    width: 100%;
+    border-collapse: collapse;
+    /* margin: 15px 0; */
+    overflow: hidden;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.kundali_wrapper .planetary-table th,
+td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid rgba(106, 48, 147, 0.1);
+    width: 200px;
+}
+
+.kundali_wrapper .planetary-table th {
+    background-color: var(--bg-primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+
+.kundali_wrapper .planetary-table th, 
+.kundali_wrapper .planetary-table td{
+  font-size: 1.2rem;
+}
+
+.kundali_wrapper .planetary-table tr:hover {
+    background-color: var(--bg-primary-light);
+}
+
+.kundali_wrapper .hover-none:hover {
+    background-color: inherit !important;
+}
+
+.kundali_wrapper .lucky-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.kundali_wrapper .lucky-item {
+    background: linear-gradient(
+        135deg,
+        var(--bg-primary-light),
+        var(--bg-primary-light)
+    );
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+.kundali_wrapper .lucky-item h3 {
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.kundali_wrapper .lucky-item p {
+    color: #444444;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .kundali_wrapper .planetary-table {
+        /* display: block; */
+        overflow-x: auto;
+    }
+
+    .kundali_wrapper .lucky-details {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* plantary */
+
+/* dasha css */
+.kundali_wrapper .dasha-cards {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.kundali_wrapper .dasha-period {
+    /* margin: 0.5rem 0; */
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kundali_wrapper .mahadasha {
+    background: linear-gradient(145deg, #f0f8ff, #e6f0fa);
+    border-left: 5px solid #4a90e2;
+}
+
+.kundali_wrapper .antardasha {
+    background: linear-gradient(145deg, #fff5f5, #ffe6e6);
+    border-left: 5px solid #e74c3c;
+}
+
+.kundali_wrapper .paryantardasha {
+    background: linear-gradient(145deg, #f5fff7, #e6fae6);
+    border-left: 5px solid #2ecc71;
+}
+
+.kundali_wrapper .shookshamadasha {
+    background: linear-gradient(145deg, #fffcf5, #faf4e6);
+    border-left: 5px solid #f1c40f;
+}
+
+.kundali_wrapper .pranadasha {
+    background: linear-gradient(145deg, #f9f5ff, #f3e6fa);
+    border-left: 5px solid #9b59b6;
+}
+
+.kundali_wrapper .planet-name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.kundali_wrapper .date-range {
+    color: #7f8c8d;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.kundali_wrapper .period-icon {
+    font-size: 1.5em;
+    margin-right: 0.8rem;
+    vertical-align: middle;
+}
+
+/* ashtvarga css */
+
+.kundali_wrapper .chart-scroll {
+    overflow-x: auto;
+}
+
+.kundali_wrapper .ashtakvarga-table2 {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+.kundali_wrapper .ashtakvarga-table2 th,
+.ashtakvarga-table2 td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid rgba(106, 48, 147, 0.1);
+    width: 200px;
+}
+
+.kundali_wrapper .ashtakvarga-table2 th {
+    background-color: var(--bg-primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+}
+.ashtakvarga-table2 td{
+    font-size: 1.2rem;
+}
+
+.kundali_wrapper .ashtakvarga-table2 tr:hover {
+    background-color: var(--bg-primary-light);
+}
+
+.kundali_wrapper .hover-none:hover {
+    background-color: inherit !important;
+}
+/*  */
+
+/* ascendant css */
+
+.kundali_wrapper .section-ascendant {
+    margin-top: 25px;
+
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.kundali_wrapper .section-ascendant p {
+    line-height: 1.6;
+}
+.color-ascendant {
+    background-color: #f6f8fb;
+    color: #444;
+}
+
+.kundali_wrapper .container-ascendant .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.kundali_wrapper .container-ascendant .card-ascendant {
+    background: var(--bg-primary-light);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    color: #444;
+}
+
+.kundali_wrapper .key {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.kundali_wrapper .mantra-ascendant {
+    background: #fff1e3;
+    border-left: 5px solid var(--primary-color);
+    padding: 10px;
+    color: #e17055;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.kundali_wrapper .ascendant-ul {
+    padding-left: 20px;
+    color: #444;
+}
+.kundali_wrapper .ascendant-ul li {
+    margin-bottom: 5px;
+}
+
+/* rudraksh */
+
+.kundali_wrapper .rudraksha-section {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 28px;
+}
+.kundali_wrapper .rudraksha-card {
+    background: linear-gradient(120deg, var(--bg-primary-light) 70%, #fff 100%);
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(95, 39, 205, 0.07);
+    flex: 1 1 240px;
+    min-width: 220px;
+    padding: 18px 16px 14px 16px;
+    margin-bottom: 8px;
+    position: relative;
+    overflow: hidden;
+}
+.kundali_wrapper .rudraksha-title {
+    font-size: 1.2rem;
+    color: #e17055;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.kundali_wrapper .rudraksha-name {
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.kundali_wrapper .qualities,
+.kundali_wrapper .mantra {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+.kundali_wrapper .mantra {
+    color: #009688;
+    font-weight: 500;
+    font-family: "Georgia", serif;
+    background: #e0f7fa;
+    border-radius: 6px;
+    padding: 3px 8px;
+    display: inline-block;
+}
+.kundali_wrapper .how-to-section {
+    margin-bottom: 28px;
+    background: #f6f8fb;
+    border-radius: 12px;
+    padding: 16px 16px 10px 16px;
+    box-shadow: 0 2px 8px rgba(95, 39, 205, 0.04);
+}
+.kundali_wrapper .how-to-title {
+    color: #444444;
+    font-weight: bold;
+    font-size: 1.45rem;
+    margin-bottom: 10px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+}
+.kundali_wrapper .how-to-list {
+    margin: 0 0 0 14px;
+    padding: 0;
+    list-style: disc;
+    color: #444;
+    font-size: 1.4rem;
+}
+.kundali_wrapper .purification {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #7b7fda;
+    background: var(--bg-primary-light);
+    border-radius: 8px;
+    padding: 8px 12px;
+}
+.kundali_wrapper .suggestion-section {
+    background: linear-gradient(120deg, #e0f7fa 60%, #f3e9ff 100%);
+    border-radius: 12px;
+    padding: 14px 16px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(95, 39, 205, 0.05);
+    font-size: 1.07rem;
+    color: #3d5a80;
+    font-weight: 500;
+}
+@media (max-width: 700px) {
+    .kundali_wrapper .rudraksha-section {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .kundali_wrapper .rudraksha-card {
+        min-width: unset;
+        flex: 1 1 120px;
+    }
+}
+
+/* rudraksh */
+
+/* gem stone suggestion */
+
+.kundali_wrapper .gem-attr-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+.kundali_wrapper .gem-attr {
+    background: var(--bg-primary-light);
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+.kundali_wrapper .desc-gem {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 14px;
+    line-height: 1.7;
+}
+.kundali_wrapper .section-title-gem {
+    font-size: 1.86rem;
+    color: #444444;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 22px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+}
+.kundali_wrapper .pill-list-gem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+.kundali_wrapper .pill {
+    background: #f6f8fb;
+    border-radius: 16px;
+    padding: 6px 16px;
+    color: #3d5a80;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+.kundali_wrapper .info-table-gem {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9f6ff;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.kundali_wrapper .info-table-gem th,
+.kundali_wrapper .info-table-gem td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid rgba(106, 48, 147, 0.1);
+    font-size: 1rem;
+    font-size: 14px;
+}
+.kundali_wrapper .info-table-gem th {
+    background: var(--bg-primary-light);
+    color: var(--primary-color);
+    font-weight: 500;
+    width: 185px;
+    font-size: 14px;
+}
+.kundali_wrapper .info-table-gem td {
+    color: #22223b;
+    font-size: 14px;
+}
+.kundali_wrapper .guide-gem,
+.kundali_wrapper .purification-gem,
+.kundali_wrapper .mantra-gem,
+.kundali_wrapper .flaws-gem {
+    /* background: var(--bg-primary-light); */
+    background: #f6f8fb;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    color: #444;
+    font-size: 15px;
+    /* text-align: center; */
+}
+.kundali_wrapper .guide-gem strong,
+.kundali_wrapper .purification-gem strong {
+    color: var(--primary-color);
+}
+
+.kundali_wrapper .flaws-gem li {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.kundali_wrapper .mantra-gem {
+    background: #fff1e3;
+    color: #e17055;
+    font-weight: 600;
+    font-family: "Georgia", serif;
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    letter-spacing: 0.5px;
+}
+
+.kundali_wrapper .flaws-gem {
+    background-color: #f6f8fb !important;
+}
+.kundali_wrapper .flaws-gem ul {
+    margin: 8px 0 0 18px;
+    padding: 0;
+    color: #444444;
+    font-size: 1.01rem;
+    text-align: left;
+}
+.kundali_wrapper .other-stones-gem {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-top: 18px;
+    margin-bottom: 0;
+}
+.kundali_wrapper .other-stones-gem span {
+    background: #e0f7fa;
+    color: #009688;
+    font-weight: 600;
+    border-radius: 30px;
+    padding: 7px 18px;
+    font-size: 1.2rem;
+}
+@media (max-width: 900px) {
+    .kundali_wrapper .section-title-gem {
+        font-size: 1.05rem;
+        padding-left: 7px;
+    }
+}
+@media (max-width: 600px) {
+    .kundali_wrapper .section-title {
+        font-size: 1rem;
+    }
+    .kundali_wrapper .guide-gem,
+    .kundali_wrapper .purification-gem,
+    .kundali_wrapper .mantra-gem,
+    .kundali_wrapper .flaws-gem {
+        padding: 10px 6px;
+        font-size: 0.98rem;
+    }
+}
+/* gem stone suggestion */
+
+/* dosh css */
+
+.kundali_wrapper .report-container {
+    margin-top: 20px;
+}
+.kundali_wrapper .report-title {
+    font-size: 2rem;
+    color: var(--primary-color);
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-align: center;
+}
+.kundali_wrapper .bot-response {
+    background: var(--bg-primary-light);
+    color: #444444;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+    padding: 12px 18px;
+    font-size: 1.48rem;
+    margin-bottom: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+.kundali_wrapper .dosha-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+    background: var(--bg-primary-light);
+    border-radius: 10px;
+    overflow: hidden;
+    font-size: 1.02rem;
+}
+.kundali_wrapper .dosha-table th,
+.kundali_wrapper .dosha-table td {
+    padding: 10px 8px;
+    text-align: left;
+    border-bottom: 1px solid #f0e0e0;
+    white-space: nowrap;
+}
+.kundali_wrapper .dosha-table th {
+    color: var(--primary-color);
+    font-weight: 600;
+    width: 180px;
+    font-size: 14px;
+}
+.kundali_wrapper .dosha-table td {
+    color: #2c3e50;
+    font-size: 14px;
+}
+.kundali_wrapper .score-bar-container {
+    width: 100%;
+    margin-bottom: 18px;
+    text-align: center;
+}
+.kundali_wrapper .score-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 6px;
+    display: block;
+}
+.kundali_wrapper .score-bar-bg {
+    background: var(--bg-primary-light);
+    border-radius: 10px;
+    height: 18px;
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 320px;
+}
+.kundali_wrapper .score-bar {
+    height: 100%;
+    width: 50%;
+    border-radius: 10px 0 0 10px;
+    transition: width 0.7s;
+}
+.kundali_wrapper .factors-title {
+    font-size: 1.08rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 6px;
+    margin-top: 10px;
+    border-bottom: 1px solid var(--primary-color);
+    display: inline;
+}
+
+.kundali_wrapper .dosh-margin {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.kundali_wrapper .factors-list {
+    margin-top: 10px;
+    background: #f6f8fb;
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: #444;
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.kundali_wrapper .factors-list ul {
+    margin: 0 0 0 18px;
+    padding: 0;
+}
+.kundali_wrapper .factors-list li {
+    margin-bottom: 10px;
+}
+
+@media (max-width: 600px) {
+    .kundali_wrapper .report-title {
+        font-size: 1.3rem;
+    }
+    .kundali_wrapper .dosha-table th {
+        width: 120px;
+    }
+}
+
+/* dosh css */
+
+/* kp */
+
+.kundali_wrapper .kp-content {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.kundali_wrapper .kp-table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.kundali_wrapper .kp-table th,
+.kundali_wrapper .kp-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid rgba(106, 48, 147, 0.1);
+    width: 200px;
+}
+
+.kundali_wrapper .kp-table th {
+    background-color: var(--bg-primary-light);
+    color: var(--primary-color);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size:1.2rem;
+    letter-spacing: 0.5px;
+}
+.kundali_wrapper .kp-table td{
+    font-size:1.2rem;
+}
+
+.kundali_wrapper .kp-table tr:hover {
+    background-color: var(--bg-primary-light);
+}
+
+.kundali_wrapper .hover-none:hover {
+    background-color: inherit !important;
+}
+
+/* Login Alert Modal Popup*/
+.login_modal_kundali_show{
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+.login_modal_kundali_show::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+   background-color:rgb(0 0 0 / 23%);
+}
+.kundali_wrapper{
+    position: relative;
+}
+.kundali_wrapper .login_modal_kundali {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 0%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.kundali_wrapper .login_modal_kundali.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.kundali_wrapper .login-modal-content-kundli {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 750px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(50px);
+    opacity: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.kundali_wrapper .login-modal-content-kundli::-webkit-scrollbar {
+    display: none;
+}
+
+.kundali_wrapper .login_modal_kundali.show .login-modal-content-kundli {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.kundali_wrapper .login-modal-kundali-close-btn {
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.kundali_wrapper .login-modal-kundali {
+   /*  display: flex;
+    gap: 20px; */
+    position: relative;
+    justify-content: center;
+}
+
+.kundali_wrapper .login-modal-content-kundli .login-modal {
+    display: flex;
+    gap: 15px;
+    position: relative;
+    justify-content: center;
+    flex-direction: column;
+}
+.kundali_wrapper .kundali-description-kund{
+    margin-bottom: 0px;
+    text-align: center;
+}
+.kundali_wrapper .login-modal-content-kundli .kundali-btn-popup {
+    padding: 7px 20px;
+    border: 1px solid var(--primary-color-kundali);
+    border-radius: 40px;
+    font-size: 16px;
+    background-color: white;
+    color: var(--primary-color-kundali);
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: max-content;
+    margin: auto;
+}
+
+.login_modal_kundali_show .kundali_wrapper .kundali-container{
+    filter: blur(2px);
+}
+
+/* Purchase Button Spinner */
+
+.spin_btn
+{
+    animation: rotate-animation 3s infinite linear;
+}
+
+@keyframes rotate-animation {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

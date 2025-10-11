@@ -1,0 +1,20 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "2aa0918bb19d49015aae7a9139f88c41"
+name = "Test My Kundali App"
+handle = "test-my-kundali-app"
+application_url = "https://mykundali.zend-apps.com/shop/install"
+embedded = true
+
+[build]
+include_config_on_deploy = true
+dev_store_url = "k-lokesh.myshopify.com"
+
+[webhooks]
+api_version = "2025-04"
+
+[auth]
+redirect_urls = [ "https://mykundali.zend-apps.com/shop/auth" ]
+
+[pos]
+embedded = false

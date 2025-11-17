@@ -38,8 +38,8 @@ class WebhookController extends Controller
         $input = FacadesRequest::all();
         
         $valueapp = WebhookLib::appUninstall($input);
-      	Log::alert($valueapp);
-      Log::alert("valueapp");
+      	//Log::alert($valueapp);
+      //Log::alert("valueapp");
     }
     
     public function shopDelete()

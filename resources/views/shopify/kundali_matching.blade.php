@@ -452,6 +452,7 @@
     <div id="kundali_match_price" class="price_modal_match modal-kundli modal hidden">
         <div class="modal-content-kundli">
             <span class="close-button-kundli" onclick="closeKundaliMatchPricingModal()">&times;</span>
+          <h4 class="payment-text">The Kundali report will be delivered to your registered email address once the payment has been successfully completed.</h4><br>
             <div class="kundali-modal">
 
                 <div class="kundali-card"></div>

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Session;
+use App\Lib\ShopInstall\AppAuthorizer;
+use GuzzleHttp\Client;
 
 class SessionHelper
 {
@@ -75,5 +77,62 @@ class SessionHelper
         Session::save();
 
         return true;
+    }
+  public static function getCustomizerPublishStatus()
+    {
+        $enabled = false;
+        $themeId = null;
+ 
+ 
+        try {
+            
+            $config = AppAuthorizer::returnConfig(session('shop_name'), session('permanent_token'));
+ 
+            $client = new Client();
+                        
+            $themesResponse = $client->get("https://{$config['ShopUrl']}/admin/api/{$config['ApiVersion']}/themes.json", [
+                'headers' => [
+                    'X-Shopify-Access-Token' => session('permanent_token')
+                ]
+            ]);
+ 
+            $themes = json_decode($themesResponse->getBody(), true);
+            
+            $mainTheme = null;
+ 
+            foreach ($themes['themes'] as $theme) {
+ 
+                
+                if ($theme['role'] === 'main') {
+                    $mainTheme = $theme;
+                    $themeId = basename($theme['admin_graphql_api_id']);
+                    break;
+                }
+            }
+            
+            $settingsResponse = $client->get("https://{$config['ShopUrl']}/admin/api/{$config['ApiVersion']}/themes/{$mainTheme['id']}/assets.jso…, [
+                'headers' => ['X-Shopify-Access-Token' => $config['AccessToken']]
+            ]);
+ 
+            $settings = json_decode($settingsResponse->getBody(), true);
+ 
+            $data = json_decode($settings['asset']['value'] ?? '{}', true);
+ 
+            if (isset($data['current']['blocks'])) {
+                foreach ($data['current']['blocks'] as $block) {
+                    if (isset($block['type']) && strpos($block['type'], env('AppEmbedUID')) !== false && ($block['disabled'] ?? false) === false) {
+                        $enabled = true;
+                        break;
+                    }
+                }
+            }
+        }
+        catch (\Exception $e)
+        {
+            \Log::alert($e->getMessage().$e->getFile().$e->getLine());
+            $enabled = false;
+        }
+ 
+        return array('enabled' => $enabled, 'themeId' => $themeId);
     }
 }

@@ -31,6 +31,23 @@ class AppAuthorizer
 
         $shopName = AppInstaller::getShopNameFromString($shopName);
         ShopifySDK::config(AppInstaller::getAppConfig($shopName));
+      
+      	// Check if this authorization code has already been used
+        if (isset($input['code'])) {
+            $codeKey = 'used_auth_code_' . md5($input['code']);
+            if (cache()->has($codeKey)) {
+                \Log::warning("Authorization code already used", [
+                    'shop' => $shopName,
+                    'code_hash' => md5($input['code'])
+                ]);
+                // Return a redirect to dashboard instead of error for better UX
+              return view('pages.dash_skeleton');
+                return response()->json(['url' => url('dashboard')]);
+            }
+            
+            // Mark this code as used (expires in 10 minutes)
+            cache()->put($codeKey, true, 600);
+        }
 
         /*
          * Show error if authorization failed
@@ -153,7 +170,7 @@ class AppAuthorizer
                     mutation {
                         appSubscriptionCreate(
                             name: "'.env("Plan_Name_".$plan_id).'"
-                            returnUrl: "'.url("shop/rac/".$shop_id."/".$plan_id).'?shop'.$shop->shop_name.'.myshopify.com"
+                            returnUrl: "'.url("shop/rac/".$shop_id."/".$plan_id).'?shop='.$shop->shop_name.'.myshopify.com"
                             trialDays: '.env("Plan_Trial_Days").'
                             test: '.(($planType == 1) ? "true" : "false").'
                             lineItems: [{

@@ -42,9 +42,13 @@ class AppInstallationController extends Controller
         if(empty($shopData) || (!empty($shopData) && ($shopData->version < env("App_Version")) || $shopData->payment_status!='active'))
         {
             ShopifySDK::config(AppInstaller::getAppConfig($shopName));
-            $response = AuthHelper::createAuthRequest(env('App_Scope'), url('/shop/auth'), null, null, true);
 
-            return view("partials.RedirectToRAC", ['url' => $response]);
+			$res = AuthHelper::createAuthRequest(env('App_Scope'), url('/shop/auth'));
+            print_r($res);die;
+            
+			/* $response = AuthHelper::createAuthRequest(env('App_Scope'), url('/shop/auth'), null, null, true);
+
+            return view("partials.RedirectToRAC", ['url' => $response]); */
             
         }
         
@@ -59,22 +63,47 @@ class AppInstallationController extends Controller
     {
         $input = Request::all();
 
-        SessionHelper::setHost($input['host']);
+        // Create a unique identifier for this authorization attempt
+        $authId = md5(($input['shop'] ?? '') . ($input['code'] ?? '') . ($input['timestamp'] ?? ''));
         
-        $response = AppAuthorizer::AuthorizeShopifyRequest($input);
-        
-        if ($response instanceof JsonResponse)
-        {
-            $responseData = $response->getData(true);
-        
-            if (isset($responseData['url'])) {
-                return redirect($responseData['url']);
-            }
-        
-            return $response;
+        // Check if this exact authorization is already being processed
+        $cacheKey = 'oauth_processing_' . $authId;
+        if (cache()->has($cacheKey)) {
+            return response()->json(['error' => 'Authorization already in progress'], 400);
         }
+        
+        // Mark this authorization as being processed (5 minute timeout)
+        cache()->put($cacheKey, true, 300);
+        
+        try {
+            SessionHelper::setHost($input['host']);
+            
+            $response = AppAuthorizer::AuthorizeShopifyRequest($input);
+            
+            // Clear the processing flag on success
+            cache()->forget($cacheKey);
+            
+            if ($response instanceof JsonResponse)
+            {
+                $responseData = $response->getData(true);
+            
+                if (isset($responseData['url'])) {
+                    return redirect($responseData['url']);
+                }
+            
+                return $response;
+            }
 
-        return $response;
+            return $response;
+        } catch (\Exception $e) {
+            // Clear the processing flag on error
+            cache()->forget($cacheKey);
+            Log::error("Authorization failed", [
+                'shop' => $input['shop'],
+                'error' => $e->getMessage()
+            ]);
+            throw $e;
+        }
     }
 
     public function ActivateShopifyRACCharge($shop_id, $plan_id)

@@ -19,6 +19,12 @@
 
 <body data-load-path="{{ url("/dashboard?host=".Request::get('host')) }}" id="shopify-app-init" data-api-key="<?= env('App_Client_Id'); ?>" data-debug="true" style="background-color: #f4f6f8;">
 
+  <ui-nav-menu>
+      <a href="{{ url('/kundalis') }}">Kundali Orders</a>
+      <a href="{{ url('/api-keys') }}">Account Settings</a>
+      <a href="{{ url('/kundali-prices') }}">Kundali Prices</a>
+      <a href="{{ url('/pricing') }}">App Pricing</a>
+  </ui-nav-menu>
 
     @yield('content')
 

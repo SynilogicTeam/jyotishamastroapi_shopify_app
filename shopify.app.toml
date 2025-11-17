@@ -1,0 +1,34 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "6548b65a583486ea9b0b02237559b554"
+name = "JyotishamAstroAPI Kundali"
+application_url = "https://jyotishamastroapi.synilogicapps.com/shop/install"
+embedded = true
+handle = "jyotishamastroapi"
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-04"
+
+  [[webhooks.subscriptions]]
+  uri = "https://jyotishamastroapi.synilogicapps.com/webhook/customer/delete"
+  compliance_topics = [ "customers/redact" ]
+
+  [[webhooks.subscriptions]]
+  uri = "https://jyotishamastroapi.synilogicapps.com/webhook/customer/get"
+  compliance_topics = [ "customers/data_request" ]
+
+  [[webhooks.subscriptions]]
+  uri = "https://jyotishamastroapi.synilogicapps.com/webhook/shop/delete"
+  compliance_topics = [ "shop/redact" ]
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_customers,read_draft_orders,read_orders,read_products,write_draft_orders,write_products"
+optional_scopes = [ ]
+use_legacy_install_flow = true
+
+[auth]
+redirect_urls = [ "https://jyotishamastroapi.synilogicapps.com/shop/auth" ]

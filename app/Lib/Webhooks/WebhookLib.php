@@ -82,8 +82,8 @@ class WebhookLib
                         $data['subject'] = "App Uninstalled: " . env("APP_NAME");
                         
                         $message = (new UninstallEmail($data))->onQueue('default');
-                      Log::alert($message);
-                      Log::alert("message");
+                      //Log::alert($message);
+                      //Log::alert("message");
                         
                         Mail::to($data['to'])->queue($message);
                     }

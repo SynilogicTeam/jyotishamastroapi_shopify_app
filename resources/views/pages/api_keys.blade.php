@@ -18,9 +18,9 @@
                                             <span class="Polaris-Text--root Polaris-Text--headingLg Polaris-Text--bold">Jyotisham Astro API</span>
                                         </h1> --}}
 
-                                        <div class="Polaris-BlockStack" style="display: flex; justify-content: center; align-items: center;">
+                                        {{--<div class="Polaris-BlockStack" style="display: flex; justify-content: center; align-items: center;">
                                             <img src="https://www.jyotishamastroapi.com/backend/uploads/setting/34526.webp" alt="" style="width: 250px">
-                                        </div>
+                                        </div> --}}
 
                                     </div>
                                 </div>
@@ -29,52 +29,53 @@
                     </div>
 
 
-                    <div class="Polaris-Layout">
-                        <div class="Polaris-Layout__Section">
-                            <div class="Polaris-LegacyCard">
-                                <div class="Polaris-LegacyCard__Section Polaris-LegacyCard__LastSectionPadding Polaris-LegacyCard__FirstSectionPadding">
-                                    <form action="{{ url('/save-api-keys') }}" method="POST">
-                                        @csrf
-                                        <div class="Polaris-BlockStack" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400)">
+                   
+        {{-- <div class="Polaris-Layout">
+                <div class="Polaris-Layout__Section">
+                    <div class="Polaris-LegacyCard">
+                        <div class="Polaris-LegacyCard__Section Polaris-LegacyCard__LastSectionPadding Polaris-LegacyCard__FirstSectionPadding">
+                            <form action="{{ url('/save-api-keys') }}" method="POST">
+                                @csrf
+                                <div class="Polaris-BlockStack" style="--pc-block-stack-order:column;--pc-block-stack-gap-xs:var(--p-space-400)"> --}}
 
-                                            {{-- Small Kundali Price --}}
-                                            <div class="Polaris-FormLayout__Item Polaris-FormLayout--grouped">
-                                                <div class="">
-                                                    <div class="Polaris-Labelled__LabelWrapper">
-                                                        <div class="Polaris-Label">
-                                                            <label id=":R2q6:Label" for=":R2q6:" class="Polaris-Label__Text">
-                                                                <span class="Polaris-Text--root Polaris-Text--bodyMd">Don't have an API Key, <a href="https://www.jyotishamastroapi.com/front/pricing" target="_blank">Generate Keys</a> now.</span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
-                                                    <div class="Polaris-Connected">
-                                                        <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
-                                                            <div class="Polaris-TextField">
-                                                                <input id=":R2q6:" autocomplete="off"
-                                                                    class="Polaris-TextField__Input" type="text"
-                                                                    aria-labelledby=":R2q6:Label" aria-invalid="false"
-                                                                    data-1p-ignore="true" data-lpignore="true"
-                                                                    data-form-type="other" value="{{ $jyotisham_astro_api ?? '' }}" name="jyotisham_astro_api" required>
-                                                                <div class="Polaris-TextField__Backdrop">
-                                                                </div>
-                                                            </div>
+                                    {{-- Small Kundali Price --}}
+                                   {{-- <div class="Polaris-FormLayout__Item Polaris-FormLayout--grouped">
+                                        <div class="">
+                                            <div class="Polaris-Labelled__LabelWrapper">
+                                                <div class="Polaris-Label">
+                                                    <label id=":R2q6:Label" for=":R2q6:" class="Polaris-Label__Text">
+                                                        <span class="Polaris-Text--root Polaris-Text--bodyMd">Don't have an API Key, <a href="https://www.jyotishamastroapi.com/front/pricing" target="_blank">Generate Keys</a> now.</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="Polaris-Connected">
+                                                <div class="Polaris-Connected__Item Polaris-Connected__Item--primary">
+                                                    <div class="Polaris-TextField">
+                                                        <input id=":R2q6:" autocomplete="off"
+                                                            class="Polaris-TextField__Input" type="text"
+                                                            aria-labelledby=":R2q6:Label" aria-invalid="false"
+                                                            data-1p-ignore="true" data-lpignore="true"
+                                                            data-form-type="other" value="{{ $jyotisham_astro_api ?? '' }}" name="jyotisham_astro_api" required>
+                                                        <div class="Polaris-TextField__Backdrop">
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
-                                            {{-- Save Button --}}
-                                            <div class="Polaris-FormLayout__Item Polaris-FormLayout--grouped">
-                                                <button type="submit" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantPrimary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter">
-                                                    <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium">Save API Key</span>
-                                                </button>
-                                            </div>
                                         </div>
-                                    </form>
+                                    </div> --}}
+
+                                    {{-- Save Button --}}
+                                    {{--<div class="Polaris-FormLayout__Item Polaris-FormLayout--grouped">
+                                        <button type="submit" class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantPrimary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter">
+                                            <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium">Save API Key</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
+                </div>
+            </div> --}}
 
                     {{-- Account Details --}}
 

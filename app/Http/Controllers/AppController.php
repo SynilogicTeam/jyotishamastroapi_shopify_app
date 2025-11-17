@@ -118,8 +118,6 @@ class AppController extends Controller
         {
             Log::error('Error creating Panchang Metafield: ' . $e->getMessage());
         }
-
-        return redirect()->to('dashboard');
     }
     
     public function SaveKundaliPrices()
@@ -244,6 +242,8 @@ class AppController extends Controller
 
     public function Dashboard()
     {
+      $value=SessionHelper::getCustomizerPublishStatus;
+      dd($value);
         return view('pages/dashboard');
     }
 

@@ -231,7 +231,8 @@
     <!-- Modal for Nakshatra Selection -->
     <div id="KundaliPriceModal" class="modal-kundli pricing-kun-modal hidden">
         <div class="modal-content-kundli">
-            <span class="close-button-kundli" onclick="closePricingModal()">&times;</span>
+            <span class="close-button-kundli" onclick="closePricingModal()">&times;</span><br>
+          	<h4 class="payment-text">The Kundali report will be delivered to your registered email address once the payment has been successfully completed.</h4>
             <div class="kundali-modal">
                 <div class="kundali-card">
                     <h3>Basic Plan</h3>

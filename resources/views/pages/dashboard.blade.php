@@ -28,7 +28,7 @@
                 <div class="Polaris-Page__Content">
                     <div class="Polaris-Grid">
                         <div
-                            class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_4ColumnSm Polaris-Grid-Cell--cell_4ColumnMd Polaris-Grid-Cell--cell_4ColumnLg Polaris-Grid-Cell--cell_4ColumnXl">
+                            class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_6ColumnSm Polaris-Grid-Cell--cell_6ColumnMd Polaris-Grid-Cell--cell_6ColumnLg Polaris-Grid-Cell--cell_6ColumnXl">
                             <div class="Polaris-LegacyCard">
                                 <div class="Polaris-LegacyCard__Header Polaris-LegacyCard__FirstSectionPadding">
                                     <h2 class="Polaris-Text--root Polaris-Text--headingSm">🔮 Step 1: Show Kundali Widgets</h2>
@@ -38,7 +38,10 @@
                                     
                                     <div class="Polaris-CalloutCard__Buttons">
                                         <a class="Polaris-Button Polaris-Button--pressable Polaris-Button--variantPrimary Polaris-Button--sizeMedium Polaris-Button--textAlignCenter"
-                                            href="https://admin.shopify.com/store/{{session('shop_name')}}/themes" target="_blank" data-polaris-unstyled="true">
+                                            {{--href="https://admin.shopify.com/store/{{session('shop_name')}}/themes" --}}
+                                           {{--href="https://{{session('shop_name')}}/admin/themes/current/editor?context=apps&template=138358947919&activateAppId={{ env('App_Client_Id') }}/jyotishamastroapi-kundali-demo" --}}
+                                          href="https://{{session('shop_name')}}.myshopify.com/admin/themes/current/editor?context=apps&template=collection&activateAppId={{ env('App_Client_Id') }}/jyotishamastroapi"
+                                           target="_blank" data-polaris-unstyled="true">
                                             <span class="Polaris-Text--root Polaris-Text--bodySm Polaris-Text--medium">Open Customizer</span>
                                         </a>
                                     </div>
@@ -46,7 +49,7 @@
                             </div>
                         </div>
                         <div
-                            class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_4ColumnSm Polaris-Grid-Cell--cell_4ColumnMd Polaris-Grid-Cell--cell_4ColumnLg Polaris-Grid-Cell--cell_4ColumnXl">
+                            class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_6ColumnSm Polaris-Grid-Cell--cell_6ColumnMd Polaris-Grid-Cell--cell_6ColumnLg Polaris-Grid-Cell--cell_6ColumnXl">
                             <div class="Polaris-LegacyCard">
                                 <div class="Polaris-LegacyCard__Header Polaris-LegacyCard__FirstSectionPadding">
                                     <h2 class="Polaris-Text--root Polaris-Text--headingSm">💰 Step 2: Set Your Kundali Pricing</h2>
@@ -64,7 +67,7 @@
                             </div>
                         </div>
 
-                        <div class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_4ColumnSm Polaris-Grid-Cell--cell_4ColumnMd Polaris-Grid-Cell--cell_4ColumnLg Polaris-Grid-Cell--cell_4ColumnXl">
+                        {{--<div class="Polaris-Grid-Cell Polaris-Grid-Cell--cell_6ColumnXs Polaris-Grid-Cell--cell_4ColumnSm Polaris-Grid-Cell--cell_4ColumnMd Polaris-Grid-Cell--cell_4ColumnLg Polaris-Grid-Cell--cell_4ColumnXl">
                             <div class="Polaris-LegacyCard">
                                 <div class="Polaris-LegacyCard__Header Polaris-LegacyCard__FirstSectionPadding">
                                     <h2 class="Polaris-Text--root Polaris-Text--headingSm">🔑 Step 3: Set Your API Key</h2>
@@ -79,7 +82,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             </div>

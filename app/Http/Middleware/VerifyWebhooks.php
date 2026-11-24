@@ -9,36 +9,39 @@ use Symfony\Component\HttpFoundation\Response;
 class VerifyWebhooks
 {
     /**
-     * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
+     * Handle an incoming webhook request.
      */
-    public function handle($request, Closure $next)
-    {       
-        $hmac_header = $_SERVER['HTTP_X_SHOPIFY_HMAC_SHA256'];
-        
-        $data = file_get_contents('php://input');
+    public function handle(Request $request, Closure $next): Response
+    {
+        $hmacHeader = $request->header('x-shopify-hmac-sha256');
 
-        if(!$this->verify_webhook($data, $hmac_header))
-        {
-          /*\Log::alert("Error! Request Not Verified");*/
-            echo 'Error! Request Not Verified';die;
+        // Get the raw body data (Shopify sends it as JSON)
+        $data = $request->getContent();
+
+        // Verify webhook
+        if (! $this->verifyWebhook($data, $hmacHeader)) {
+            return response('Error! Request not verified.', 401);
         }
-        else
-        {
-         /** \Log::alert($request);
-          *\Log::alert("request");
-          */
-            return $next($request);
-        }
+
+        return $next($request);
     }
 
-    public function verify_webhook($data, $hmac_header)
+    /**
+     * Verify that the webhook is from Shopify.
+     */
+    protected function verifyWebhook(string $data, ?string $hmacHeader): bool
     {
-      /**\Log::alert($data);
-      \Log::alert("data");
-      */
-        $calculated_hmac = base64_encode(hash_hmac('sha256', $data, env('App_Client_Secret'), true));
-        return hash_equals($hmac_header, $calculated_hmac);
+        if (!$hmacHeader) {
+            return false;
+        }
+        //\Log::alert($data);
+      	//\Log::alert("data");
+        // Generate HMAC using your app’s client secret
+        $calculatedHmac = base64_encode(
+            hash_hmac('sha256', $data, env('App_Client_Secret'), true)
+        );
+
+        // Use timing-safe comparison to avoid timing attacks
+        return hash_equals($hmacHeader, $calculatedHmac);
     }
 }

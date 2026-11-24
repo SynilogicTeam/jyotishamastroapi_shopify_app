@@ -90,32 +90,37 @@
                                             @endif
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
+                                            </li>--}}
+                                          <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
+                                                    <p><?=env('Plan_1_Credits')?> API Credits</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
+                                                    <p>Basic Panchang</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
+                                                    <p>Match Making (Basic)</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
+                                                    <p>Horoscope Charts</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Kundali Matching Payout</p>
                                                 </div>
@@ -124,17 +129,13 @@
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Panchang Widget</p>
                                                 </div>
-                                            </li>
+                                            </li>--}}
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Customer Support</p>
                                                 </div>
                                             </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_1_Credits')?> API Credits</p>
-                                                </div>
-                                            </li>
+                                            
                                         </ul>
 
                                         <div class="zend__price-bottom-box plan-price-box">
@@ -186,57 +187,51 @@
                                             @endif
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Matching Payout</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Panchang Widget</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Priority Customer Support</p>
+                                            </li>--}}
+                                          <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p><?=env('Plan_2_Credits')?> API Credits</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_2_Credits')?> API Credits</p>
+                                                    <p>Basic Panchang</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Match Making (Basic)</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Horoscope Charts</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Kundali Matching Payout</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>View Panchang Widget</p>
+                                                </div>
+                                            </li>--}}
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box"
+                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Priority Customer Support</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -289,57 +284,51 @@
                                             @endif
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Matching Payout</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Panchang Widget</p>
-                                                </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Priority Customer Support</p>
+                                            </li>--}}
+                                           <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p><?=env('Plan_3_Credits')?> API Credits</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_3_Credits')?> API Credits</p>
+                                                    <p>Basic Panchang</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Match Making (Basic)</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Horoscope Charts</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Kundali Matching Payout</p>
+                                                </div>
+                                            </li>
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>View Panchang Widget</p>
+                                                </div>
+                                            </li>--}}
+                                            <li class="plan-benifits-item">
+                                                <div class="Polaris-Box"
+                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Priority Customer Support</p>
                                                 </div>
                                             </li>
                                         </ul>
@@ -394,32 +383,37 @@
                                             @endif
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
+                                            </li>--}}
+                                           <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
+                                                    <p><?=env('Plan_1_Credits')?> API Credits</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
+                                                    <p>Basic Panchang</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
+                                                    <p>Match Making (Basic)</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
+                                                    <p>Horoscope Charts</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Kundali Matching Payout</p>
                                                 </div>
@@ -428,17 +422,13 @@
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Panchang Widget</p>
                                                 </div>
-                                            </li>
+                                            </li>--}}
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Customer Support</p>
                                                 </div>
                                             </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_1_Credits')?> API Credits</p>
-                                                </div>
-                                            </li>
+                                           
                                         </ul>
 
                                         <div class="zend__price-bottom-box plan-price-box">
@@ -491,65 +481,64 @@
 
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
+                                            </li>--}}
+                                          	<li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p><?=env('Plan_5_Credits')?> API Credits<span class="plan-price-sub-text">
+                                                    /Month
+                                                </span></p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Basic Panchang</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Match Making (Basic)</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Horoscope Charts</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Kundali Matching Payout</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Panchang Widget</p>
                                                 </div>
-                                            </li>
+                                            </li>--}}
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Priority Customer Support</p>
                                                 </div>
                                             </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_5_Credits')?> API Credits</p>
-                                                </div>
-                                            </li>
                                         </ul>
                                         <div class="zend__price-bottom-box plan-price-box">
                                             <h3 class="Polaris-Heading plan-price Polaris-Text--heading2xl">
                                                 ${{ env('Plan_Price_5') }} <span class="plan-price-sub-text">
-                                                    /Month
+                                                    /Yearly
                                                 </span></h3>
+                                        </div>
+                                        <div class="zend__price-bottom-box">
+                                          <span>Save 16 %</span>
                                         </div>
                                         <div class="plan-select-btn">
                                             <a href="javascript:void(0);"
@@ -592,65 +581,64 @@
                                             @endif
                                         </div>
                                         <ul class="plan-benifits currentPlan">
-                                            <li class="plan-benifits-item">
+                                            {{--<li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Kundali</p>
                                                 </div>
-                                            </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali</p>
+                                            </li>--}}
+                                           <li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p><?=env('Plan_6_Credits')?> API Credits<span class="plan-price-sub-text">
+                                                    /Month
+                                                </span></p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Kundali Payment Option</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Basic Panchang</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>View Kundali Matching</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Match Making (Basic)</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p>Generate Kundali Matching</p>
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Horoscope Charts</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
+                                                    <p>Multi Languages</p>
+                                                </div>
+                                            </li>
+                                            {{--<li class="plan-benifits-item">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Kundali Matching Payout</p>
                                                 </div>
                                             </li>
                                             <li class="plan-benifits-item">
-                                                <div class="Polaris-Box"
-                                                    style="--pc-box-color:var(--p-color-text-subdued)">
+                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>View Panchang Widget</p>
                                                 </div>
-                                            </li>
+                                            </li>--}}
                                             <li class="plan-benifits-item">
                                                 <div class="Polaris-Box"
                                                     style="--pc-box-color:var(--p-color-text-subdued)">
                                                     <p>Priority Customer Support</p>
                                                 </div>
                                             </li>
-                                            <li class="plan-benifits-item">
-                                                <div class="Polaris-Box" style="--pc-box-color:var(--p-color-text-subdued)">
-                                                    <p><?=env('Plan_6_Credits')?> API Credits</p>
-                                                </div>
-                                            </li>
                                         </ul>
                                         <div class="zend__price-bottom-box plan-price-box">
                                             <h3 class="Polaris-Heading plan-price Polaris-Text--heading2xl">
                                                 ${{ env('Plan_Price_6') }} <span class="plan-price-sub-text">
-                                                    /Month
+                                                    /Yearly
                                                 </span></h3>
+                                        </div>
+                                      	<div class="zend__price-bottom-box">
+                                          <span>Save 17 %</span>
                                         </div>
                                         <div class="plan-select-btn">
                                             <a href="javascript:void(0);"

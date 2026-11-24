@@ -24,6 +24,13 @@
 
 <body id="shopify-app-init">
 
+  <ui-nav-menu>
+      <a href="{{ url('/kundalis') }}">Kundali Orders</a>
+      <a href="{{ url('/api-keys') }}">Account Settings</a>
+      <a href="{{ url('/kundali-prices') }}">Kundali Prices</a>
+      <a href="{{ url('/pricing') }}">App Pricing</a>
+  </ui-nav-menu>
+  
     @yield('content')
 
     <script type="text/javascript" src="{{ url('/js/datatables.min.js') }}"></script>

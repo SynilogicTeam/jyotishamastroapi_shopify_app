@@ -187,7 +187,7 @@
 
                     if (window.sessionToken) {
                         if (!xhr._headersAdded) {
-                            xhr.setRequestHeader("X-Shopify-Authorization", "Bearer " + window.sessionToken);
+                            xhr.setRequestHeader("Authorization", "Bearer " + window.sessionToken);
                             xhr._headersAdded = true;
                         }
                     }
